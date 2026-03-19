@@ -4,8 +4,8 @@ backend:
   branch: main
   base_url: https://sveltia-cms-auth.youngjo.workers.dev
 
-media_folder: "static/assets"
-public_folder: "/assets"
+media_folder: static/assets
+public_folder: /assets
 
 collections:
   - name: posts # Used in routes, e.g., /admin/collections/post
