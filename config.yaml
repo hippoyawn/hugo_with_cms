@@ -10,6 +10,8 @@ disableHugoGeneratorInject: true
 date:
   locale: ko_KR
 
+buildFuture: true
+
 uglyURLs: true
 # canonifyURLs: true
 

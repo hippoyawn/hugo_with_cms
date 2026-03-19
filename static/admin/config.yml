@@ -2,6 +2,7 @@ backend:
   name: github
   repo: hippoyawn/hugo_with_cms
   branch: main
+  skip_ci: true
   base_url: https://sveltia-cms-auth.youngjo.workers.dev
 
 media_folder: /static/assets
