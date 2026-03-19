@@ -2,11 +2,10 @@ backend:
   name: github
   repo: hippoyawn/hugo_with_cms
   branch: main
-  skip_ci: true
   base_url: https://sveltia-cms-auth.youngjo.workers.dev
 
 media_folder: "static/assets"
-public_folder: "/hugo_with_cms/assets"
+public_folder: "/assets"
 
 collections:
   - name: posts # Used in routes, e.g., /admin/collections/post
