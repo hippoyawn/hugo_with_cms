@@ -6,7 +6,7 @@ backend:
   base_url: https://sveltia-cms-auth.youngjo.workers.dev
 
 media_folder: /static/assets
-public_folder: /assets
+public_folder: /hugo_with_cms/assets
 
 collections:
   - name: posts # Used in routes, e.g., /admin/collections/post
