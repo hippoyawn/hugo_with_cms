@@ -13,7 +13,7 @@ date:
 buildFuture: true
 
 uglyURLs: true
-# canonifyURLs: true
+canonifyURLs: true
 
 markup:
   goldmark:
