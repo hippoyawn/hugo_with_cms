@@ -1,0 +1,18 @@
+backend:
+  name: github
+  repo: hippoyawn/hugo_with_cms
+  base_url: https://sveltia-cms-auth.youngjo.workers.dev
+
+media_folder: /static/assets
+public_folder: /assets
+
+collections:
+  - name: posts # Used in routes, e.g., /admin/collections/post
+    label: Posts # Used in the UI
+    folder: /content/posts # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    fields: # The fields for each document, usually in front matter
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Media Files", name: "image", widget: "file", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }

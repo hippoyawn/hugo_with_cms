@@ -1,0 +1,36 @@
+title: title
+languageCode: en-us
+titleCaseStyle: none
+capitalizeListTitles: false
+pluralizeListTitles: false
+enableGitInfo: true
+pygmentsUseClasses: true
+disableHugoGeneratorInject: true
+
+date:
+  locale: ko_KR
+
+uglyURLs: true
+# canonifyURLs: true
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+
+  highlight:
+    guessSyntax: true
+    lineNumbersInTable: false
+    tabWidth: 4
+
+menu:
+  main:
+    - identifier: about
+      name: about
+      url: /about
+      weight: 1
+
+    - identifier: posts
+      name: posts
+      url: /posts
+      weight: 2
