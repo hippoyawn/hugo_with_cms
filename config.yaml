@@ -12,6 +12,7 @@ date:
 
 buildFuture: true
 
+relativeURLs: true
 uglyURLs: true
 canonifyURLs: true
 
