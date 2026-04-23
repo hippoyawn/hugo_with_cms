@@ -1,6 +1,12 @@
-{{ partial "header.html" . }}
+<html lang="en">
+    {{ partial "head.html" . }}
 
-<h1>{{ .Params.title }}</h1>
+    <body>
+        {{ partial "header.html" . }}
 
-<p>welcome to my website.</p>
-{{ partial "footer.html" . }}
+        <h1>{{ .Params.title }}</h1>
+
+        <p>welcome to my website.</p>
+        {{ partial "footer.html" . }}
+    </body>
+</html>

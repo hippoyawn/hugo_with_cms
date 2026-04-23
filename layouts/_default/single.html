@@ -1,13 +1,21 @@
-{{ partial "header.html" . }}
+<html lang="en">
+    {{ partial "head.html" . }}
 
-<h1 class="post-title">{{ .Title }}</h1>
+    <body>
+        {{ partial "header.html" . }}
 
-<span class="post-date">{{ .Date.Format "January 2, 2006" }}</span>
+        <main>
+            <h1 class="post-title">{{ .Title }}</h1>
 
-{{ if .Params.image }}
-	<img src="{{ .Params.image }}" >
-{{ end }}
+            <span class="post-date">
+                {{ .Date.Format "January 2, 2006" }}
+            </span>
 
-{{ .Content }}
+            {{ if .Params.image }}
+            <img src="{{ .Params.image }}" alt="{{ .Title }}" />
+            {{ end }} {{ .Content }}
+        </main>
 
-{{ partial "footer.html" . }}
+        {{ partial "footer.html" . }}
+    </body>
+</html>
