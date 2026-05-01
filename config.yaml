@@ -32,7 +32,7 @@ menu:
       url: /about.html
       weight: 1
 
-    - identifier: posts
-      name: posts
-      url: /posts
+    - identifier: works
+      name: works
+      url: /works
       weight: 2

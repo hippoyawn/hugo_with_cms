@@ -2,11 +2,13 @@
     {{ partial "head.html" . }}
 
     <body>
-        {{ partial "header.html" . }}
+        <div class="container">
+            {{ partial "header.html" . }} {{ partial "nav.html" . }}
 
-        <h1>{{ .Params.title }}</h1>
+            <h1>{{ .Params.title }}</h1>
 
-        <p>welcome to my website.</p>
-        {{ partial "footer.html" . }}
+            <p></p>
+            <!--{{ partial "footer.html" . }}-->
+        </div>
     </body>
 </html>

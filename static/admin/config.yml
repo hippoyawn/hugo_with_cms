@@ -27,24 +27,39 @@ media_libraries:
           optimize: true
 
 collections:
-  - name: posts # Used in routes, e.g., /admin/collections/post
-    label: Posts # Used in the UI
-    folder: /content/posts # The path to the folder where the documents are stored
+  - name: works # Used in routes, e.g., /admin/collections/post
+    label: Works # Used in the UI
+    folder: /content/wosts # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
+    media_folder: "{{media_folder}}/works/{{slug}}"
+    public_folder: "{{public_folder}}/works/{{slug}}"
     fields:
       - name: title
-        label: Title
+        label: 제목
 
       - name: date
-        label: Publish Date
+        label: 날짜
         widget: datetime
 
-      - name: image
-        label: Media Files
-        widget: file
+      - name: medium
+        label: 제작방식 및 재료
+
+      - name: dimensions
+        label: 크기
         require: false
 
-      - name: body
-        label: Body
+      - name: pages
+        label: 페이지 수
+        widget: number
+        require: false
+
+      - name: image
+        label: 이미지
+        widget: file
+        multiple: true
+        require: false
+
+      - name: description
+        label: 설명
         widget: richtext
         modes: [rich_text, raw]
