@@ -29,7 +29,7 @@ media_libraries:
 collections:
   - name: works # Used in routes, e.g., /admin/collections/post
     label: Works # Used in the UI
-    folder: /content/wosks # The path to the folder where the documents are stored
+    folder: /content/works # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
     media_folder: "{{media_folder}}/works/{{slug}}"
     public_folder: "{{public_folder}}/works/{{slug}}"
