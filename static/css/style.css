@@ -1,36 +1,36 @@
 @font-face {
     font-family: "Director";
     src: url("../fonts/Director-Light.woff2") format("woff2-variations");
-    font-weight: 300;
     font-display: swap;
+    font-weight: 300;
 }
 
 @font-face {
     font-family: "Director";
     src: url("../fonts/Director-Regular.woff2") format("woff2-variations");
-    font-weight: 400;
     font-display: swap;
+    font-weight: 400;
 }
 
 @font-face {
     font-family: "Director";
     src: url("../fonts/Director-Bold.woff2") format("woff2-variations");
-    font-weight: 700;
     font-display: swap;
+    font-weight: 700;
 }
 
 @font-face {
     font-family: "ShinMyungjo";
     src: url("../fonts/SM3신신명조-04.woff2") format("woff2-variations");
-    font-weight: 300;
     font-display: swap;
+    font-weight: 300;
 }
 
 @font-face {
     font-family: "ShinMyungjo";
     src: url("../fonts/SM3신신명조-03.woff2") format("woff2-variations");
-    font-weight: 700;
     font-display: swap;
+    font-weight: 700;
 }
 
 html,
@@ -112,8 +112,8 @@ nav li:not(:first-child) > a {
     height: 100%;
     display: grid;
     grid-template: "left right";
-    grid-template-columns: calc(60% - 75px) calc(40% - 75px);
-    gap: 150px;
+    grid-template-columns: 55% 35%;
+    gap: 10%;
 }
 
 .left {

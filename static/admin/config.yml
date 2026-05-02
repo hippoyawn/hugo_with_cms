@@ -1,11 +1,11 @@
-backend:
-  name: github
-  repo: hippoyawn/hugo_with_cms
-  branch: main
-  base_url: https://sveltia-cms-auth.youngjo.workers.dev
-
 # backend:
-#   name: test-repo
+#   name: github
+#   repo: hippoyawn/hugo_with_cms
+#   branch: main
+#   base_url: https://sveltia-cms-auth.youngjo.workers.dev
+
+backend:
+  name: test-repo
 
 logo:
   src: /assets/logo.jpg
@@ -36,14 +36,17 @@ collections:
     fields:
       - name: title
         label: 제목
+        require: true
 
       - name: date
         label: 날짜
         widget: datetime
+        require: true
 
       - name: medium
         label: 제작방식 및 재료
         widget: list
+        require: false
 
       - name: dimensions
         label: 크기
@@ -58,8 +61,9 @@ collections:
         label: 이미지
         widget: file
         multiple: true
-        require: false
+        require: true
 
       - name: description
         label: 설명
         widget: text
+        require: true

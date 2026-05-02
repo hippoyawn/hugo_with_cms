@@ -15,7 +15,13 @@
                     <p>{{ .Title }}</p>
                     {{ end }} {{ if and .Date (.Params.showDate | default true)
                     }}
-                    <p>{{ .Date.Format "2006-01-02" }}</p>
+                    <p>{{ .Date.Format "2006" }}</p>
+                    {{ end }} {{ if .Params.medium}}
+                    <p>{{ .Params.medium }}</p>
+                    {{ end }} {{ if .Params.dimensions }}
+                    <p>{{ .Params.dimensions }}</p>
+                    {{ end }} {{ if .Params.pages }}
+                    <p>{{ .Params.pages }}</p>
                     {{ end }} {{ if .Params.description }}
                     <p>{{ .Params.description }}</p>
                     {{ end }} {{ .Content }}
