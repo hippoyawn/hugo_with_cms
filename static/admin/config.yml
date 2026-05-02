@@ -61,4 +61,4 @@ collections:
 
       - name: description
         label: 설명
-        widget: string
+        widget: text
