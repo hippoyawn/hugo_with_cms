@@ -43,6 +43,7 @@ collections:
 
       - name: medium
         label: 제작방식 및 재료
+        widget: list
 
       - name: dimensions
         label: 크기
