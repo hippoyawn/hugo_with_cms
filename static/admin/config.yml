@@ -61,5 +61,4 @@ collections:
 
       - name: description
         label: 설명
-        widget: richtext
-        modes: [rich_text, raw]
+        widget: string

@@ -3,12 +3,14 @@
 
     <body>
         <div class="container">
-            {{ partial "header.html" . }} {{ partial "nav.html" . }}
-
-            <h1>{{ .Params.title }}</h1>
-
-            <p></p>
-            <!--{{ partial "footer.html" . }}-->
+            {{ partial "nav.html" . }}
+            <ul class="works-ul">
+                {{ range where .Site.RegularPages "Section" "works" }}
+                <li>
+                    <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                </li>
+                {{ end }}
+            </ul>
         </div>
     </body>
 </html>

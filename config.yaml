@@ -12,7 +12,7 @@ date:
 
 buildFuture: true
 
-uglyURLs: true
+uglyURLs: false
 canonifyURLs: true
 
 markup:
@@ -29,7 +29,7 @@ menu:
   main:
     - identifier: about
       name: about
-      url: /about.html
+      url: /about
       weight: 1
 
     - identifier: works

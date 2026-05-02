@@ -3,20 +3,10 @@
 
     <body>
         <div class="container">
-            {{ partial "header.html" . }} {{ partial "nav.html" . }}
+            {{ partial "nav.html" . }}
             <main>
-                <strong class="post-title">{{ .Title }}</strong>
-
-                <!--<span class="post-date">
-                    {{ .Date.Format "January 2, 2006" }}
-                </span>-->
-
-                {{ if .Params.image }}
-                <img src="{{ .Params.image }}" alt="{{ .Title }}" />
-                {{ end }} {{ .Content }}
+                <div>{{ .Content }}</div>
             </main>
-
-            <!--{{ partial "footer.html" . }}-->
         </div>
     </body>
 </html>

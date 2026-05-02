@@ -1,0 +1,26 @@
+<html lang="en">
+    {{ partial "head.html" . }}
+
+    <body>
+        <div class="container">
+            {{ partial "nav.html" . }}
+            <main class="main-works">
+                <div class="left">
+                    {{ if .Params.image }} {{ range .Params.image }}
+                    <img src="{{ . }}" alt="" />
+                    {{ end }} {{ end }}
+                </div>
+                <div class="right">
+                    {{ if and .Date (.Params.showTitle | default true) }}
+                    <p>{{ .Title }}</p>
+                    {{ end }} {{ if and .Date (.Params.showDate | default true)
+                    }}
+                    <p>{{ .Date.Format "2006-01-02" }}</p>
+                    {{ end }} {{ if .Params.description }}
+                    <p>{{ .Params.description }}</p>
+                    {{ end }} {{ .Content }}
+                </div>
+            </main>
+        </div>
+    </body>
+</html>
