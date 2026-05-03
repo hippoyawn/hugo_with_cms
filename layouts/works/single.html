@@ -2,7 +2,7 @@
     {{ partial "head.html" . }}
 
     <body>
-        <div class="container">
+        <div class="container {{ .Section }}">
             {{ partial "nav.html" . }}
             <main class="main-works">
                 <div class="left">
@@ -11,18 +11,25 @@
                     {{ end }} {{ end }}
                 </div>
                 <div class="right">
-                    {{ if and .Date (.Params.showTitle | default true) }}
-                    <p>{{ .Title }}</p>
-                    {{ end }} {{ if and .Date (.Params.showDate | default true)
-                    }}
+                    {{ $pages := where .Site.RegularPages "Section" "works" }}
+                    {{ range $index, $p := $pages }} {{ if eq $p.RelPermalink
+                    .RelPermalink }}
+                    <p>{{ add $index 1 }}&nbsp; {{ .Title }}</p>
+                    {{ end }} {{ end }}
+                    <br />
+                    {{ if and .Date (.Params.showDate | default true) }}
                     <p>{{ .Date.Format "2006" }}</p>
                     {{ end }} {{ if .Params.medium}}
                     <p>{{ .Params.medium }}</p>
-                    {{ end }} {{ if .Params.dimensions }}
-                    <p>{{ .Params.dimensions }}</p>
-                    {{ end }} {{ if .Params.pages }}
-                    <p>{{ .Params.pages }}</p>
-                    {{ end }} {{ if .Params.description }}
+                    {{ end }} <br />{{ if or .Params.dimensions .Params.pages }}
+                    <p>
+                        {{ if .Params.dimensions }}
+                        <span>{{ .Params.dimensions }}</span>, {{ end }} {{ if
+                        .Params.pages }}
+                        <span>{{ .Params.pages }}</span>
+                        {{ end }}
+                    </p>
+                    {{ end }}<br /><br />{{ if .Params.description }}
                     <p>{{ .Params.description }}</p>
                     {{ end }} {{ .Content }}
                 </div>

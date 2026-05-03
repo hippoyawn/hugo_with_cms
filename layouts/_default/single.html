@@ -2,7 +2,7 @@
     {{ partial "head.html" . }}
 
     <body>
-        <div class="container">
+        <div class="container {{ .File.BaseFileName  }}">
             {{ partial "nav.html" . }}
             <main>
                 <div>{{ .Content }}</div>
