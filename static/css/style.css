@@ -50,21 +50,26 @@ body {
     padding: 0;
     width: 100%;
     height: 100%;
+    overflow: hidden;
 }
 
 .container {
     position: relative;
     box-sizing: border-box;
     width: 100%;
-    min-height: 100vh;
-    padding: 15px 5px 15px 5px;
+    height: 100%;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
+    padding: 15px 5px 15px 5px;
+
     gap: 13px;
 }
 
 .container > :first-child {
+    height: 100%;
     grid-column: span 2;
+    position: sticky;
+    top: 0;
 }
 
 .container > :nth-child(2) {
@@ -114,7 +119,7 @@ nav li:not(:first-child) > a {
 .main-works {
     position: relative;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     display: grid;
     grid-column: span 10;
     grid-template-columns: repeat(10, 1fr);
@@ -123,8 +128,17 @@ nav li:not(:first-child) > a {
 
 .left {
     grid-column: span 6;
+    height: calc(100vh - 30px);
+    overflow-y: auto;
+    scrollbar-width: none;
+}
+
+.left::-webkit-scrollbar {
+    display: none;
 }
 
 .right {
+    position: relative;
+    height: 100%;
     grid-column: 8 / span 3;
 }
