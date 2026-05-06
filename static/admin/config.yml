@@ -8,7 +8,7 @@ backend:
 #   name: test-repo
 
 logo:
-  src: /assets/logo.jpg
+  src: /static/assets/logo.jpg
   show_in_header: true
 
 media_folder: /static/assets
