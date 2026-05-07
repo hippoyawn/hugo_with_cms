@@ -11,6 +11,8 @@ logo:
   src: ../assets/logo.jpg
   show_in_header: true
 
+app_title: mainaccessdoor
+
 media_folder: /static/assets
 public_folder: /assets
 
