@@ -133,3 +133,11 @@ nav li:first-child:hover {
     grid-column: 5 / span 6;
     scrollbar-width: none;
 }
+
+.right .thumbnail img {
+    opacity: 0;
+}
+
+.right .thumbnail img.show {
+    opacity: 1;
+}
