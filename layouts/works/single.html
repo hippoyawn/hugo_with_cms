@@ -4,24 +4,20 @@
     <body>
         <div class="container {{ .Section }}">
             {{ partial "nav.html" . }}
-            <main class="main-works">
+            <main class="main-default">
                 <div class="left">
-                    {{ if .Params.image }} {{ range .Params.image }}
-                    <img src="{{ . }}" alt="" />
-                    {{ end }} {{ end }}
-                </div>
-                <div class="right">
                     {{ $pages := where .Site.RegularPages "Section" "works" }}
                     {{ range $index, $p := $pages }} {{ if eq $p.RelPermalink
                     .RelPermalink }}
-                    <p>{{ add $index 1 }}&nbsp; {{ .Title }}</p>
+                    <p>{{ .Title }}</p>
+                    <!--<p>{{ add $index 1 }}&nbsp; {{ .Title }}</p>-->
                     {{ end }} {{ end }}
                     <br />
                     {{ if and .Date (.Params.showDate | default true) }}
                     <p>{{ .Date.Format "2006" }}</p>
                     {{ end }} {{ if .Params.medium}}
                     <p>{{ .Params.medium }}</p>
-                    {{ end }} <br />{{ if or .Params.dimensions .Params.pages }}
+                    {{ end }} {{ if or .Params.dimensions .Params.pages }}
                     <p>
                         {{ if .Params.dimensions }}
                         <span>{{ .Params.dimensions }}</span>, {{ end }} {{ if
@@ -29,9 +25,14 @@
                         <span>{{ .Params.pages }}</span>
                         {{ end }}
                     </p>
-                    {{ end }}<br /><br />{{ if .Params.description }}
+                    {{ end }}<br />{{ if .Params.description }}
                     <p>{{ .Params.description }}</p>
                     {{ end }} {{ .Content }}
+                </div>
+                <div class="right">
+                    {{ if .Params.image }} {{ range .Params.image }}
+                    <img src="{{ . }}" alt="" />
+                    {{ end }} {{ end }}
                 </div>
             </main>
         </div>

@@ -4,16 +4,22 @@
     <body>
         <div class="container">
             {{ partial "nav.html" . }}
-            <ul class="works-ul">
-                {{ range $index, $page := where .Site.RegularPages "Section"
-                "works" }}
-                <li>
-                    <a href="{{ $page.RelPermalink }}">
-                        {{ add $index 1 }}&nbsp; {{ $page.Title }}
-                    </a>
-                </li>
-                {{ end }}
-            </ul>
+            <main class="main-default">
+                <div class="left">
+                    <ul class="works-ul">
+                        {{ range $index, $page := where .Site.RegularPages
+                        "Section" "works" }}
+                        <li>
+                            <a href="{{ $page.RelPermalink }}">
+                                {{ $page.Title }}
+                                <!--{{ add $index 1 }}&nbsp; {{ $page.Title }}-->
+                            </a>
+                        </li>
+                        {{ end }}
+                    </ul>
+                </div>
+                <div class="right"></div>
+            </main>
         </div>
     </body>
 </html>

@@ -32,7 +32,12 @@ menu:
       url: /about
       weight: 1
 
+    - identifier: contact
+      name: contact
+      url: /contact
+      weight: 2
+
     - identifier: works
       name: works
       url: /works
-      weight: 2
+      weight: 3
