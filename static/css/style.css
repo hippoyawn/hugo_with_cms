@@ -103,11 +103,11 @@ a:hover {
     text-decoration: underline;
 }
 
-nav li:first-child {
+nav li:first-child a {
     text-decoration: underline;
 }
 
-nav li:first-child:hover {
+nav li:first-child a:hover {
     text-decoration: none;
 }
 
