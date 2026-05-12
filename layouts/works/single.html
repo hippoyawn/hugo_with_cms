@@ -30,9 +30,11 @@
                     {{ end }} {{ .Content }}
                 </div>
                 <div class="right">
-                    {{ if .Params.image }} {{ range .Params.image }}
-                    <img src="{{ . }}" alt="" />
-                    {{ end }} {{ end }}
+                    <div class="images">
+                        {{ if .Params.image }} {{ range .Params.image }}
+                        <img src="{{ . }}" alt="" loading="lazy" />
+                        {{ end }} {{ end }}
+                    </div>
                 </div>
             </main>
         </div>
