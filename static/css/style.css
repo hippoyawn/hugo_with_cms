@@ -151,6 +151,7 @@ nav li:first-child a:hover {
     height: 100%;
     grid-column: 5 / span 6;
     overflow-y: auto;
+    z-index: -1;
 }
 
 .right .images img {
@@ -188,6 +189,14 @@ nav li:first-child a:hover {
 }
 
 @media screen and (max-width: 768px) {
+    body {
+        font-size: clamp(6px, 1.2vw, 8px);
+    }
+
+    .container {
+        gap: 5px;
+    }
+
     .main-default {
         grid-template-columns: repeat(4, 1fr);
     }
@@ -195,7 +204,7 @@ nav li:first-child a:hover {
     .left {
         grid-column: span 4;
         color: white;
-        mix-blend-mode: exclusion;
+        mix-blend-mode: difference;
     }
 
     .right {
