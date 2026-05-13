@@ -4,10 +4,10 @@
             <main class="main-default">
                 <div class="left">
                     <ul class="works-ul">
-                        {{ range $page := where .Site.RegularPages "Section" "works" }}
+                        {{ range sort (where .Site.RegularPages "Section" "works") "Date" "desc" }}
                         <li data-thumbnail="{{ .Site.BaseURL }}{{ .Params.thumbnail }}">
-                            <a href="{{ $page.RelPermalink }}">
-                                {{ $page.Title }}
+                            <a href="{{ .RelPermalink }}">
+                                {{ .Title }}
                             </a>
                         </li>
                         {{ end }}
