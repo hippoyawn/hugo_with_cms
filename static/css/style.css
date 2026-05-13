@@ -26,6 +26,15 @@
     font-weight: 300;
 }
 
+::-moz-selection {
+    background: black;
+    color: white;
+}
+
+::selection {
+    background: black;
+    color: white;
+}
 html,
 body {
     width: 100%;
