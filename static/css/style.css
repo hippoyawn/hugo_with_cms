@@ -41,7 +41,7 @@ body {
     height: 100%;
     font-family: "Director", "ShinMyungjo", serif;
     font-weight: 300;
-    font-size: clamp(11px, 0.9vw, 13px);
+    font-size: clamp(10px, 0.9vw, 13px);
     line-height: 1.39;
     letter-spacing: -0.046em;
     word-spacing: -0.092em;
@@ -60,6 +60,7 @@ body {
     padding: 0;
     width: 100%;
     height: 100%;
+    background: white;
 }
 
 .container {
@@ -79,7 +80,7 @@ body {
     display: none;
 }
 
-.container > :first-child {
+.container > nav {
     height: 100%;
     grid-column: span 2;
 }
@@ -89,11 +90,11 @@ body {
     top: 0px;
 }
 
-.container.works main {
+.container.works > main {
     grid-column: span 10;
 }
 
-.container.about main {
+.container.about > main {
     grid-column: span 5;
 }
 
@@ -129,7 +130,7 @@ nav li:first-child a:hover {
     padding-left: 0;
 }
 
-.main-default {
+.container > main {
     position: relative;
     width: 100%;
     height: 100%;
@@ -144,6 +145,10 @@ nav li:first-child a:hover {
     top: 0px;
     height: calc(100vh - 36px);
     grid-column: span 3;
+}
+
+.left.fake {
+    display: none;
 }
 
 .right {
@@ -171,8 +176,13 @@ nav li:first-child a:hover {
 }
 
 @media screen and (max-width: 1280px) {
-    .main-default {
+    .container > main {
         grid-template-columns: repeat(13, 1fr);
+    }
+
+    .container.about > main {
+        grid-column: span 5;
+        grid-template-columns: none;
     }
 
     .left {
@@ -180,34 +190,70 @@ nav li:first-child a:hover {
     }
 
     .right {
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: -1;
         grid-column: 6 / span 8;
     }
 }
 
 @media screen and (max-width: 768px) {
-    body {
-        font-size: clamp(6px, 1.2vw, 8px);
-    }
-
     .container {
         gap: 5px;
     }
 
-    .main-default {
-        grid-template-columns: repeat(4, 1fr);
+    .container.about > main {
+        grid-column: span 7;
+    }
+
+    .container > nav {
+        height: 100%;
+        grid-column: span 2;
+    }
+
+    .menus {
+        position: sticky;
+        top: 0px;
+    }
+
+    .container > main {
+        grid-column: span 9;
+        grid-template-columns: repeat(10, 1fr);
+        gap: 5px;
+    }
+
+    .container.works main {
+        grid-column: span 10;
+    }
+}
+
+@media screen and (max-width: 595px) {
+    html,
+    body {
+        font-size: clamp(8.5px, 1.2vw, 10px);
+    }
+
+    .container.about > main {
+        grid-column: span 7;
+    }
+
+    .container > nav {
+        grid-column: span 3;
+    }
+
+    .container > main {
+        grid-column: span 9;
+    }
+
+    .container.works main {
+        grid-column: span 9;
     }
 
     .left {
-        grid-column: span 4;
-        color: white;
-        mix-blend-mode: difference;
+        grid-column: 1 / span 7;
+        color: black;
+        z-index: 1;
     }
 
     .right {
-        grid-column: span 4;
+        position: absolute;
+        grid-column: 5 / span 10;
     }
 }
