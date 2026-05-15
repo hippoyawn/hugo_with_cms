@@ -23,8 +23,8 @@ media_libraries:
         raster_image:
           format: webp
           quality: 80
-          width: 1920
-          height: 1920
+          width: 1200
+          height: 1200
         svg:
           optimize: true
 
