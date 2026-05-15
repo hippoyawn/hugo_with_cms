@@ -149,17 +149,13 @@ nav li:first-child a:hover {
     position: sticky;
     top: 0px;
     height: calc(100vh - 36px);
-    grid-column: span 3;
-}
-
-.left.fake {
-    display: none;
+    grid-column: span 4;
 }
 
 .right {
     position: relative;
     height: 100%;
-    grid-column: 5 / span 6;
+    grid-column: 6 / span 8;
     overflow-y: auto;
     z-index: -1;
 }
