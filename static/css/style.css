@@ -41,7 +41,7 @@ body {
     height: 100%;
     font-family: "Director", "ShinMyungjo", serif;
     font-weight: 300;
-    font-size: clamp(10px, 0.9vw, 13px);
+    font-size: clamp(10px, 0.8vw, 15px);
     line-height: 1.39;
     letter-spacing: -0.046em;
     word-spacing: -0.092em;
@@ -59,6 +59,7 @@ body {
     margin: 0;
     padding: 0;
     width: 100%;
+    max-width: 1680px;
     height: 100%;
     background: white;
 }
@@ -231,7 +232,7 @@ nav li:first-child a:hover {
 @media screen and (max-width: 595px) {
     html,
     body {
-        font-size: clamp(8.5px, 1.2vw, 10px);
+        font-size: clamp(9px, 1.2vw, 11px);
     }
 
     .container.about > main {
