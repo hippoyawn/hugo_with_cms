@@ -6,12 +6,7 @@
             {{ partial "nav.html" . }}
             <main>
                 <div class="left">
-                    {{ $pages := where .Site.RegularPages "Section" "works" }}
-                    {{ range $index, $p := $pages }} {{ if eq $p.RelPermalink
-                    .RelPermalink }}
                     <p>{{ .Title }}</p>
-                    <!--<p>{{ add $index 1 }}&nbsp; {{ .Title }}</p>-->
-                    {{ end }} {{ end }}
                     <br />
                     {{ if and .Date (.Params.showDate | default true) }}
                     <p>{{ .Date.Format "2006" }}</p>
