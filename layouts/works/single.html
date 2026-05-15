@@ -4,7 +4,7 @@
     <body>
         <div class="container {{ .Section }}">
             {{ partial "nav.html" . }}
-            <main class="main-default">
+            <main>
                 <div class="left">
                     {{ $pages := where .Site.RegularPages "Section" "works" }}
                     {{ range $index, $p := $pages }} {{ if eq $p.RelPermalink
@@ -32,7 +32,11 @@
                 <div class="right">
                     <div class="images">
                         {{ if .Params.image }} {{ range .Params.image }}
-                        <img src="{{ . }}" alt="" loading="lazy" />
+                        <img
+                            src="{{ . }}"
+                            alt="{{ path.BaseName . }}"
+                            loading="lazy"
+                        />
                         {{ end }} {{ end }}
                     </div>
                 </div>
