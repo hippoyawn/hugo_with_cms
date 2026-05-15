@@ -140,6 +140,10 @@ nav li:first-child a:hover {
     gap: 13px;
 }
 
+.container.about main {
+    grid-template-columns: none;
+}
+
 .left {
     position: sticky;
     top: 0px;
