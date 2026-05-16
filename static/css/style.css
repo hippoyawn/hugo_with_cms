@@ -126,6 +126,16 @@ a:hover {
     flex-direction: column;
 }
 
+main {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-column: span 10;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 13px;
+}
+
 .container.works > main,
 .container.contact > main {
     grid-column: span 10;
@@ -138,16 +148,6 @@ a:hover {
 
 .works-ul {
     padding-left: 0;
-}
-
-main {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    display: grid;
-    grid-column: span 10;
-    grid-template-columns: repeat(12, 1fr);
-    gap: 13px;
 }
 
 .container.about main {
@@ -165,10 +165,10 @@ main {
     grid-column: span 3;
 }
 
-.container .right {
+.container.works .right {
     position: relative;
     height: 100%;
-    grid-column: 5 / span 10;
+    grid-column: 5 / span 7;
 }
 
 .container .right .images img {
