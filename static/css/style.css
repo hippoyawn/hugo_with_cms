@@ -1,27 +1,27 @@
 @font-face {
     font-family: "Director";
-    src: url("../fonts/Director-Light.woff2") format("woff2-variations");
+    src: url("../fonts/Director-Light.woff2") format("woff2");
     font-display: swap;
     font-weight: 300;
 }
 
 @font-face {
     font-family: "Director";
-    src: url("../fonts/Director-Regular.woff2") format("woff2-variations");
+    src: url("../fonts/Director-Regular.woff2") format("woff2");
     font-display: swap;
     font-weight: 400;
 }
 
 @font-face {
     font-family: "Director";
-    src: url("../fonts/Director-Bold.woff2") format("woff2-variations");
+    src: url("../fonts/Director-Bold.woff2") format("woff2");
     font-display: swap;
     font-weight: 700;
 }
 
 @font-face {
     font-family: "ShinMyungjo";
-    src: url("../fonts/SM3신신명조-03.woff2") format("woff2-variations");
+    src: url("../fonts/SM3신신명조-03.woff2") format("woff2");
     font-display: swap;
     font-weight: 300;
 }
@@ -35,6 +35,11 @@
     background: black;
     color: white;
 }
+
+::-webkit-scrollbar {
+    display: none;
+}
+
 html,
 body {
     width: 100%;
@@ -77,26 +82,10 @@ body {
     scrollbar-width: none;
 }
 
-.container::-webkit-scrollbar {
-    display: none;
-}
-
-.container > nav {
+nav {
     height: 100%;
     grid-column: span 2;
-}
-
-.menus {
-    position: sticky;
-    top: 0px;
-}
-
-.container.works > main {
-    grid-column: span 10;
-}
-
-.container.about > main {
-    grid-column: span 5;
+    background: transparent;
 }
 
 p {
@@ -127,11 +116,34 @@ nav li:first-child a:hover {
     text-decoration: none;
 }
 
+.menus {
+    position: sticky;
+    top: 0px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.pages {
+    display: flex;
+    flex-direction: column;
+}
+
+.container.works > main,
+.container.contact > main {
+    grid-column: span 10;
+    grid-template-columns: none;
+}
+
+.container.about > main {
+    grid-column: span 5;
+}
+
 .works-ul {
     padding-left: 0;
 }
 
-.container > main {
+main {
     position: relative;
     width: 100%;
     height: 100%;
@@ -145,26 +157,24 @@ nav li:first-child a:hover {
     grid-template-columns: none;
 }
 
-.left {
+.container .left {
     position: sticky;
     top: 0px;
     height: calc(100vh - 36px);
     grid-column: span 4;
 }
 
-.right {
+.container .right {
     position: relative;
     height: 100%;
     grid-column: 6 / span 8;
-    overflow-y: auto;
-    z-index: -1;
 }
 
-.right .images img {
+.container .right .images img {
     width: 100%;
 }
 
-.right .thumbnail img {
+.container .right .thumbnail img {
     opacity: 0;
     width: auto;
     max-width: 100%;
@@ -172,7 +182,7 @@ nav li:first-child a:hover {
     object-fit: contain;
 }
 
-.right .thumbnail img.show {
+.container .right .thumbnail img.show {
     opacity: 1;
 }
 
@@ -181,7 +191,7 @@ nav li:first-child a:hover {
         gap: 8px;
     }
 
-    .container > main {
+    main {
         grid-template-columns: repeat(12, 1fr);
         gap: 8px;
     }
@@ -210,7 +220,7 @@ nav li:first-child a:hover {
         gap: 5px;
     }
 
-    .container > nav {
+    nav {
         height: 100%;
         grid-column: span 2;
     }
@@ -220,9 +230,8 @@ nav li:first-child a:hover {
         top: 0px;
     }
 
-    .container > main {
+    main {
         grid-column: span 9;
-        grid-template-columns: repeat(10, 1fr);
         gap: 5px;
     }
 
@@ -235,36 +244,88 @@ nav li:first-child a:hover {
     }
 }
 
-@media screen and (max-width: 595px) {
+@media screen and (max-width: 580px) {
     html,
     body {
         font-size: clamp(9px, 1.2vw, 11px);
+        overflow: hidden;
     }
 
-    .container.about > main {
-        grid-column: span 9;
+    .container {
+        grid-template-areas:
+            "nav"
+            "main";
+        grid-template-columns: repeat(10, 1fr);
+        grid-template-rows: 40px calc(100% - 40px);
+        gap: 0;
     }
 
     .container > nav {
-        grid-column: span 3;
-    }
-
-    .container > main {
-        grid-column: span 9;
-    }
-
-    .container.works main {
-        grid-column: span 9;
-    }
-
-    .left {
-        grid-column: 1 / span 7;
-        color: black;
+        grid-area: nav;
+        width: 100%;
+        grid-column: span 10;
+        position: sticky;
+        top: 0;
         z-index: 1;
     }
 
-    .right {
-        position: absolute;
-        grid-column: 5 / span 10;
+    .menus {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .pages {
+        flex-direction: row;
+        gap: 1rem;
+    }
+
+    main {
+        grid-area: main;
+        grid-column: span 10;
+        grid-template-columns: repeat(10, 1fr);
+    }
+
+    .container.about > main,
+    .container.contact > main {
+        grid-column: span 10;
+    }
+
+    .container .left {
+        grid-column: span 10;
+        height: 100%;
+    }
+
+    .container .right {
+        grid-column: span 5;
+        display: none;
+    }
+
+    .container.works .left,
+    .container.works .right {
+        grid-column: span 5;
+        overflow-y: scroll;
+        position: fixed;
+        top: 0;
+        width: calc(50% - 6px);
+        padding-top: 58px;
+    }
+
+    .container.works .left {
+        left: 3px;
+    }
+
+    .container.works .right {
+        right: 3px;
+        display: block;
+    }
+
+    .container.works .left :last-child {
+        margin-bottom: 84px;
+    }
+
+    .container.works .right .images:last-child {
+        margin-bottom: 84px;
     }
 }
