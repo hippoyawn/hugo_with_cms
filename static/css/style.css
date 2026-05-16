@@ -161,10 +161,14 @@ main {
     grid-column: span 4;
 }
 
+.container.works .left {
+    grid-column: span 3;
+}
+
 .container .right {
     position: relative;
     height: 100%;
-    grid-column: 6 / span 8;
+    grid-column: 5 / span 10;
 }
 
 .container .right .images img {
