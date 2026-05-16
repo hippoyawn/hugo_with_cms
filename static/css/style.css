@@ -119,13 +119,11 @@ nav li:first-child a:hover {
 .menus {
     position: sticky;
     top: 0px;
-    display: flex;
-    flex-direction: column;
+    display: grid;
 }
 
 .pages {
-    display: flex;
-    flex-direction: column;
+    display: grid;
 }
 
 .container.works > main,
