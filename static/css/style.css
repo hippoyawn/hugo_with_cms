@@ -129,7 +129,7 @@ a:hover {
 .container.works > main,
 .container.contact > main {
     grid-column: span 10;
-    grid-template-columns: none;
+    grid-template-columns: repeat(10, 1fr);
 }
 
 .container.about > main {
@@ -307,6 +307,7 @@ main {
         top: 0;
         /*width: calc(50% - 6px);*/
         padding-top: 58px;
+        scrollbar-width: none;
     }
 
     .container.works .left {
