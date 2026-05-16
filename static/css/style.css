@@ -132,7 +132,7 @@ main {
     height: 100%;
     display: grid;
     grid-column: span 10;
-    grid-template-columns: repeat(12, 1fr);
+    grid-template-columns: repeat(10, 1fr);
     gap: 13px;
 }
 
@@ -158,7 +158,11 @@ main {
     position: sticky;
     top: 0px;
     height: calc(100vh - 36px);
-    grid-column: span 4;
+    grid-column: span 3;
+}
+
+.container .right {
+    grid-column: 5 / span 7;
 }
 
 .container.works .left {
@@ -193,8 +197,12 @@ main {
     }
 
     main {
-        grid-template-columns: repeat(12, 1fr);
         gap: 8px;
+    }
+
+    .container.works > main,
+    .container.contact > main {
+        grid-column: span 10;
     }
 
     .container.about > main {
@@ -207,7 +215,7 @@ main {
     }
 
     .right {
-        grid-column: 6 / span 8;
+        grid-column: 6 / span 9;
     }
 }
 
