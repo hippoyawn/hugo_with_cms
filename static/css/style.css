@@ -108,11 +108,11 @@ a:hover {
     text-decoration: underline;
 }
 
-nav li:first-child a {
+.title a {
     text-decoration: underline;
 }
 
-nav li:first-child a:hover {
+.title a:hover {
     text-decoration: none;
 }
 
