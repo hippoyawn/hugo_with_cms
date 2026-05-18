@@ -31,11 +31,34 @@
                             src="{{ . }}"
                             alt="{{ path.BaseName . }}"
                             loading="lazy"
+                            decoding="async"
                         />
                         {{ end }} {{ end }}
                     </div>
                 </div>
             </main>
+            <div class="big-ass">
+                <img />
+            </div>
         </div>
     </body>
 </html>
+
+<script>
+    const images = document.querySelectorAll("img");
+    const bigAss = document.querySelector(".big-ass");
+    const bigAssImg = document.querySelector(".big-ass img");
+
+    for (let i = 0; i < images.length; i++) {
+        const image = images[i];
+
+        image.addEventListener("click", () => {
+            bigAssImg.src = image.src;
+            bigAss.style.display = "flex";
+        });
+    }
+
+    bigAss.addEventListener("click", () => {
+        bigAss.style.display = "none";
+    });
+</script>
